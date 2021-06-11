@@ -1,9 +1,9 @@
-// import './App.css';
-import { createGlobalStyle } from 'styled-components'
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
-import QueryStateProvider from './hoc/QueryStateProvider'
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import QueryStateProvider from './hoc/QueryStateProvider';
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -29,7 +29,7 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-`
+`;
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
       </QueryStateProvider>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

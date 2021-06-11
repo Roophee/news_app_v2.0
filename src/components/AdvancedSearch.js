@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import Flex from './blank_elements/FlexContainer'
-import Button from './blank_elements/Button'
-import OptionsGroup from '../hoc/OptionsGroup'
-import { keywordGetterHandler } from '../data/dataHandlers'
-import { QueryParamsContext } from '../hoc/QueryStateProvider'
+import React from 'react';
+import styled from 'styled-components';
+import Flex from './blank_elements/FlexContainer';
+import Button from './blank_elements/Button';
+import OptionsGroup from '../hoc/OptionsGroup';
+import { keywordGetterHandler } from '../data/dataHandlers';
+import { QueryParamsContext } from '../hoc/QueryStateProvider';
 
 const AdvancedSearchWrapper = styled.div`
   display: none;
@@ -27,29 +27,29 @@ const AdvancedSearchWrapper = styled.div`
   input[id='from'] {
     padding: 0;
   }
-`
+`;
 const StyledFlex = styled(Flex)`
   flex-grow: 1;
 
   @media screen and (max-width: 1075px) {
     justify-content: start;
   }
-`
+`;
 const SearchButton = styled(Button)`
   font-size: 0.8rem;
   background: #4caf50;
   border-radius: 3px;
   width: 5vw;
   min-width: 65px;
-`
+`;
 const ResetButton = styled(SearchButton)`
   background: #f44336;
-`
+`;
 
-export const AdvancedSearch = React.forwardRef((props, ref) => {
+const AdvancedSearch = React.forwardRef((props, ref) => {
   const { queryState, dispatch, setResetWasClicked, setSubmitWasClicked } =
-    React.useContext(QueryParamsContext)
-  const { q, topic, lang, country, from, page_size } = queryState
+    React.useContext(QueryParamsContext);
+  const { q, topic, lang, country, from, page_size } = queryState;
 
   return (
     <AdvancedSearchWrapper wrap ref={ref}>
@@ -121,20 +121,22 @@ export const AdvancedSearch = React.forwardRef((props, ref) => {
         <SearchButton
           type="submit"
           onClick={event => {
-            event.preventDefault()
-            setSubmitWasClicked(true)
+            event.preventDefault();
+            setSubmitWasClicked(true);
           }}>
           Search
         </SearchButton>
         <ResetButton
           type="reset"
           onClick={event => {
-            event.preventDefault()
-            setResetWasClicked(true)
+            event.preventDefault();
+            setResetWasClicked(true);
           }}>
           Reset
         </ResetButton>
       </Flex>
     </AdvancedSearchWrapper>
-  )
-})
+  );
+});
+
+export default AdvancedSearch;

@@ -13,8 +13,21 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": [
       "error", {
-        "semi": false
+        "semi": true
       }
-    ]
+    ],
+    "no-return-assign": "warn",
+    "no-unused-vars": "warn",
+    "camelcase": "warn",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "jsx-a11y/no-onchange": "warn",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "react/prop-types": "warn",
+    "no-nested-ternary": "warn",
+    "no-underscore-dangle": "warn",
+    "react/no-unescaped-entities": "warn",
+    "react/destructuring-assignment": "warn",
+    "react/jsx-props-no-spreading": "warn",
+    "react/no-array-index-key": "warn",
   }
 }

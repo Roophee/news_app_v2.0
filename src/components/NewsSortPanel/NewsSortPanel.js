@@ -1,25 +1,26 @@
-import React from 'react'
-import { StyledNewsSortPanel } from './styles'
-import OptionsGroup from '../../hoc/OptionsGroup'
-import { getSortFunction, normalizeNews } from '../../data/dataHandlers'
-import { QueryParamsContext } from '../../hoc/QueryStateProvider'
-import { NewsItem } from '../NewsItem'
+import React from 'react';
+import { StyledNewsSortPanel } from './styles';
+import OptionsGroup from '../../hoc/OptionsGroup';
+import { getSortFunction, normalizeNews } from '../../data/dataHandlers';
+import { QueryParamsContext } from '../../hoc/QueryStateProvider';
+import { NewsItem } from '../NewsItem';
 
 export const NewsSortPanel = props => {
-  const keys = ['date', 'rate', 'match']
-  const values = ['decrease', 'increase']
-  const [sortType, setSortType] = React.useState({ key: 'date', value: 'decrease' })
-  const [sortWasChanged, setSortWasChanged] = React.useState(false)
-  const { setNewsInStorage, newsStorage } = React.useContext(QueryParamsContext)
+  const keys = ['date', 'rate', 'match'];
+  const values = ['decrease', 'increase'];
+  const [sortType, setSortType] = React.useState({ key: 'date', value: 'decrease' });
+  const [sortWasChanged, setSortWasChanged] = React.useState(false);
+  const { setNewsInStorage, newsStorage } = React.useContext(QueryParamsContext);
 
-  window.news = newsStorage
+  window.news = newsStorage;
 
   const applySetSortType = (type, value) => {
     // setSortType(prev => ({ key: sortType, value }))
     // eslint-disable-next-line no-unused-vars
-    setNewsInStorage(prev => newsStorage.sort(getSortFunction({ key: type, value })))
-    setSortWasChanged(prev => !prev)
-  }
+    newsStorage.sort(getSortFunction({ key: type, value }));
+    setNewsInStorage(newsStorage);
+    setSortWasChanged(prev => !prev);
+  };
 
   // React.useEffect(() => {
   //
@@ -51,5 +52,5 @@ export const NewsSortPanel = props => {
         </select>
       </StyledNewsSortPanel>
     </>
-  )
-}
+  );
+};

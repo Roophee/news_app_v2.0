@@ -1,5 +1,5 @@
-import React from 'react'
-import Option from '../components/Option'
+import React from 'react';
+import Option from '../components/Option';
 
 export default function OptionsGroup(props) {
   const optionsGroups = {
@@ -45,28 +45,13 @@ export default function OptionsGroup(props) {
       sp: 'Spain',
       ch: 'China',
     },
-    sortByDateOptions: {
-      default: 'None',
-      decrease: 'First newest',
-      increase: 'First latest',
-    },
-    sortBySourseRate: {
-      default: 'None',
-      decrease: 'First best rate',
-      increase: 'First lowest rate',
-    },
-    sortByMatch: {
-      default: 'None',
-      decrease: 'Fitst best match',
-      increase: 'Fitst best match',
-    },
-  }
-  const { optionsType } = props
+  };
+  const { optionsType } = props;
   return Object.entries(optionsGroups[optionsType]).map(([value, text], index) => {
     const optionProperties = {
       value,
       text,
-    }
-    return <Option key={index} {...optionProperties} />
-  })
+    };
+    return <Option key={`${index}-${value}`} {...optionProperties} />;
+  });
 }
