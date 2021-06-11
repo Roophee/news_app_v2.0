@@ -7,9 +7,5 @@ const StyledButton = styled.button`
 `;
 
 export default function Button(props) {
-    return (
-        <StyledButton {...props}>
-            {props.children}
-        </StyledButton>
-    )
+  return <StyledButton {...props}>{props.children}</StyledButton>;
 }

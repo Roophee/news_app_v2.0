@@ -25,13 +25,13 @@ export const createQueryToApi = queryProperties => {
     .filter(item => item[0] !== 'from')
     .map(([key, value]) => (url += valuesFromKey(key, value)));
   if (queryProperties.from !== '') {
-    return (url += `from=${queryProperties['from'].replaceAll('-', '/')}`);
+    return (url += `from=${queryProperties.from.replaceAll('-', '/')}`);
   }
   return url;
 };
 
-export const fetchingNews = (url = startEndpoint) => {
-  return fetch(`${url}`, {
+export const fetchingNews = (url = startEndpoint) =>
+  fetch(`${url}`, {
     method: 'GET',
     headers: {
       'x-rapidapi-key': `${API_KEY}`,
@@ -39,16 +39,16 @@ export const fetchingNews = (url = startEndpoint) => {
     },
   })
     .then(response => {
-      const { status, message } = response;
+      const { status } = response;
       if (response.ok) return response.json();
       if (status > 300) throw Error(errorString);
-    })
-    .catch(error => {
-      // console.log('error', error);
-      return getResponseErrorNewsArticle(error);
+      return null;
     })
     .then(data => {
       const articles = data.articles || [];
       return articles.length > 0 ? articles : getResponseNoMatch();
-    });
-};
+    })
+    .catch(error =>
+      // console.log('error', error);
+      getResponseErrorNewsArticle(error)
+    );

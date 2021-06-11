@@ -15,23 +15,22 @@ const StyledHeader = styled.header`
   height: 50px;
   border-bottom: 2px solid #000;
   margin-bottom: 7px;
-  .noShrink{
+  .noShrink {
     min-width: 25%;
   }
-`
+`;
 const LocalFlex = styled(Flex)`
-    width: 80%;
-`
+  width: 80%;
+`;
 
 export default function Header() {
-    return (
-        <StyledHeader>
-            <div className="noShrink">
-            </div>
-            <Flex>
-            <Logo/>
-            </Flex>
-            <Account/>
-        </StyledHeader>
-    )
+  return (
+    <StyledHeader>
+      <div className="noShrink" />
+      <Flex>
+        <Logo />
+      </Flex>
+      <Account />
+    </StyledHeader>
+  );
 }

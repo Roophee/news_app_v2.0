@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react';
-import { createQueryToApi, fetchingNews } from './data/APIHandlers';
-import { defaultSearch } from './data/dataHandlers';
+import React, { useState } from 'react';
 
 export const initialQueryPropertyState = {
   q: '*',
@@ -10,43 +8,45 @@ export const initialQueryPropertyState = {
   page_size: 75,
   from: '',
 };
-//
-export const reducer = (state, {type, payload}) => {
-  switch (type){
-    case  'SET_KEYWORD':
+
+export const reducer = (state, { type, payload }) => {
+  switch (type) {
+    case 'SET_KEYWORD':
       return {
         ...state,
-        q: defaultSearch(payload),
-      }
+        q: payload,
+      };
     case 'SET_TOPIC':
       return {
         ...state,
         topic: payload,
-      }
+      };
     case 'SET_COUNTRY':
       return {
         ...state,
         country: payload,
-      }
+      };
     case 'SET_LANGUAGE':
       return {
         ...state,
         lang: payload,
-      }
+      };
     case 'SET_FROM':
       return {
         ...state,
         from: payload,
-      }
-      case 'SET_PAGE_SIZE':
+      };
+    case 'SET_PAGE_SIZE':
       return {
         ...state,
         page_size: payload,
-      }
+      };
+    default:
+      return null;
   }
 };
 
-export function useHooks ()  {
+export function useHooks() {
   const [submitWasClicked, setSubmitWasClicked] = useState(false);
   const [newsStorage, setNewsInStorage] = useState([]);
   const [resetWasClicked, setResetWasClicked] = useState(false);
@@ -79,4 +79,4 @@ export function useHooks ()  {
     // setQueryProperties,
     setResetWasClicked,
   };
-};
+}

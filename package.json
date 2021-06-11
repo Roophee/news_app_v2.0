@@ -2,6 +2,7 @@
   "name": "styled_news_app",
   "version": "0.1.0",
   "private": true,
+  "license": "ISC",
   "homepage": "https://roophee.github.io/news_app_v2.0/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -19,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint . --quiet --fix"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^18.2.1",

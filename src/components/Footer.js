@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {keyframes, css} from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import Flex from './blank_elements/FlexContainer';
 import Link from './blank_elements/Link';
 
@@ -13,10 +13,10 @@ const StyledFooter = styled.footer`
   flex-grow: 0;
   font-weight: 500;
   border-top: 2px solid #000;
-`
+`;
 const LocalFlex = styled(Flex)`
   width: 80%;
-`
+`;
 
 const blink = keyframes`
     from{
@@ -28,37 +28,36 @@ const blink = keyframes`
     to {
       color: #c62828;
     }
-`
+`;
 
 const animation = css`
-  animation: ${blink} 10s  ease-in infinite;
-`
+  animation: ${blink} 10s ease-in infinite;
+`;
 
 const LocalLink = styled(Link)`
   color: #c62828;
   font-weight: 600;
   ${props => (props.animation ? animation : '')}
-`
-
+`;
 
 export default function Footer() {
-    return (
-        <StyledFooter>
-            <Flex>
-                <span>&#160;&#160;Powered by
-                    <LocalLink href="https://newscatcherapi.com/">
-                        &#12296;/newscatcher&#12297;
-                    </LocalLink>
-                </span>
-            </Flex>
-            <span></span>
-            <Flex>
-                <span>Module task in{' '}
-                    <LocalLink animation={true} href="https://kottans.org">
-                       Kottans
-                    </LocalLink>
-                </span>
-            </Flex>
-        </StyledFooter>
-    )
+  return (
+    <StyledFooter>
+      <Flex>
+        <span>
+          &#160;&#160;Powered by
+          <LocalLink href="https://newscatcherapi.com/">&#12296;/newscatcher&#12297;</LocalLink>
+        </span>
+      </Flex>
+      <span />
+      <Flex>
+        <span>
+          Module task in{' '}
+          <LocalLink animation href="https://kottans.org">
+            Kottans
+          </LocalLink>
+        </span>
+      </Flex>
+    </StyledFooter>
+  );
 }
