@@ -5,6 +5,7 @@ import Flex from './blank_elements/FlexContainer';
 import { normalizeNews } from '../data/dataHandlers.js';
 import { QueryParamsContext } from '../hoc/QueryStateProvider';
 import WelcomeScreen from '../components/WelcomeScreen'
+import {NewsSortPanel} from "./NewsSortPanel/NewsSortPanel";
 
 const StyledNewsList = styled(Flex)`
   width: 90%;
@@ -21,7 +22,8 @@ export default function NewsList() {
             {newsStorage.length === 0
                 ? <WelcomeScreen />
                 : normalizeNews(newsStorage).length > 0
-                    ? normalizeNews(newsStorage).map(item => <NewsItem item={item} key={item._id} />)
+                    ? <NewsSortPanel>
+                        </NewsSortPanel>
                     : startPage}
         </StyledNewsList>
     );

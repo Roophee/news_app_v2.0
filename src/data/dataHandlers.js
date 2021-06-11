@@ -50,6 +50,51 @@ export const normalizeNews = news => {
   return news.sort(sortNewsByTimeStamp).filter(filterNewsByRealTimeStamp);
 };
 
+export const sortByRateDecrease = (a, b) =>{
+  console.log("sortByRateDecrease")
+  return b.rank - a.rank;
+}
+
+export const sortByRateIncrease = (a, b) =>{
+  console.log("sortByRateIncrease")
+  return a.rank - b.rank;
+}
+
+export const sortByMatchDecrease = (a, b) =>{
+  console.log("sortByMatchDecrease")
+  return b._score - a._score;
+}
+
+export const sortByMatchIncrease = (a, b) =>{
+  console.log("sortByMatchIncrease")
+  return a._score - b._score;
+}
+
+const sortByTimeStampIncrease = (a, b) => {
+  console.log("sortByTimeStampIncrease")
+  return (
+      Date.parse(concatTimeStamp(a.published_date)) - Date.parse(concatTimeStamp(b.published_date))
+  );
+};
+
+export const getSortFunction = (sortType) => {
+  const {key , value} = sortType;
+  switch(sortType.key){
+    case 'date':
+      if(value === "decrease"){
+        return sortNewsByTimeStamp;
+      }return sortByTimeStampIncrease;
+    case 'rate':
+      if(value === "decrease"){
+        return sortByRateDecrease;
+      }return sortByRateIncrease;
+    case 'match':
+      if(value === "decrease"){
+        return sortByMatchDecrease;
+      }return sortByMatchIncrease;
+  }
+}
+
 // export const getQueryParam = name => {
 //   if (getItemFromLocalStore(name) !== '*' && getItemFromLocalStore(name) !== '0') {
 //     return `${getItemFromLocalStore(name)}`;
