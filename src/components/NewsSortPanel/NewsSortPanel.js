@@ -19,9 +19,7 @@ export const NewsSortPanel = props => {
 
   const applySetSortType = (type, value) => {
     // setSortType(prev => ({ key: sortType, value }))
-    console.log(newsStorage);
     newsStorage.sort(getSortFunction({ key: type, value }));
-    console.log(newsStorage);
     setNewsInStorage(newsStorage);
     setSortWasChanged(prev => !prev);
   };

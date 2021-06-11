@@ -73,6 +73,7 @@ export default function QueryStateProvider(props) {
   const formState = {
     setResetWasClicked,
     setSubmitWasClicked,
+    setNewsInStorage,
     newsStorage,
     queryState,
     dispatch,
