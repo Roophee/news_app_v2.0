@@ -7,8 +7,8 @@ import {
     newsSourceHandler,
 } from '../data/dataHandlers.js';
 import styled from 'styled-components';
-import Link from '../blank_elements/Link';
-import Flex from '../blank_elements/FlexContainer';
+import Link from './blank_elements/Link';
+import Flex from './blank_elements/FlexContainer';
 
 const StyledNewsItemWrapper = styled(Flex)`
     width: 100%;

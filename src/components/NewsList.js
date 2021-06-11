@@ -1,7 +1,7 @@
 import React from 'react';
 import { NewsItem } from './NewsItem';
 import styled from 'styled-components';
-import Flex from '../blank_elements/FlexContainer';
+import Flex from './blank_elements/FlexContainer';
 import { normalizeNews } from '../data/dataHandlers.js';
 import { QueryParamsContext } from '../hoc/QueryStateProvider';
 import WelcomeScreen from '../components/WelcomeScreen'

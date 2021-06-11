@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {keyframes, css} from 'styled-components';
-import Flex from '../blank_elements/FlexContainer';
-import Link from '../blank_elements/Link';
+import Flex from './blank_elements/FlexContainer';
+import Link from './blank_elements/Link';
 
 const StyledFooter = styled.footer`
   display: grid;

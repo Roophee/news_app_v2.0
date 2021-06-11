@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Flex from '../blank_elements/FlexContainer';
+import Flex from './blank_elements/FlexContainer';
 import HeaderNav from './HeaderNav'
 
 const StyledUsersInitials = styled.div`

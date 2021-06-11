@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
 import Account from './Account';
-import Flex from '../blank_elements/FlexContainer';
+import Flex from './blank_elements/FlexContainer';
 
 const StyledHeader = styled.header`
   display: grid;
