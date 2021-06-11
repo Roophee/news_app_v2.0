@@ -11,16 +11,15 @@ const StyledUsersInitials = styled.div`
   background: brown;
   margin-right: 20px;
   visibility: ${props => props.visibility || 'hidden'};
-`
+`;
+
 const StyledButton = styled.button.attrs(props => ({
     type: 'button',
 }))`
   padding: 5px 15px;
   font-size: .7rem;
   font-weight: 500;
-`
-
-// const
+`;
 
 export default function Account() {
     return (
