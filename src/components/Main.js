@@ -1,8 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import SearchForm from './SearchForm';
-import NewsList from './NewsList';
-
+import React from 'react'
+import styled from 'styled-components'
+import SearchForm from './SearchForm'
+import NewsList from './NewsList'
 
 const StyledMain = styled.main`
   width: 90%;
@@ -12,13 +11,11 @@ const StyledMain = styled.main`
   flex-grow: 1;
 `
 
-
 export default function Main() {
-
-    return (
-            <StyledMain>
-                <SearchForm/>
-                <NewsList/>
-            </StyledMain>
-    )
+  return (
+    <StyledMain>
+      <SearchForm />
+      <NewsList />
+    </StyledMain>
+  )
 }

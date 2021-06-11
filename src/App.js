@@ -1,9 +1,9 @@
 // import './App.css';
+import { createGlobalStyle } from 'styled-components'
 import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
 import QueryStateProvider from './hoc/QueryStateProvider'
-import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -34,14 +34,14 @@ body {
 function App() {
   return (
     <div className="App">
-        <GlobalStyle/>
-        <Header/>
-        <QueryStateProvider>
-            <Main/>
-        </QueryStateProvider>
-        <Footer/>
+      <GlobalStyle />
+      <Header />
+      <QueryStateProvider>
+        <Main />
+      </QueryStateProvider>
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
