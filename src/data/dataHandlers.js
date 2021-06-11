@@ -40,32 +40,16 @@ const filterNewsByRealTimeStamp = article =>
 export const normalizeNews = news =>
   news.sort(sortNewsByTimeStamp).filter(filterNewsByRealTimeStamp);
 
-export const sortByRateDecrease = (a, b) => {
-  console.log('sortByRateDecrease');
-  return b.rank - a.rank;
-};
+export const sortByRateDecrease = (a, b) => b.rank - a.rank;
 
-export const sortByRateIncrease = (a, b) => {
-  console.log('sortByRateIncrease');
-  return a.rank - b.rank;
-};
+export const sortByRateIncrease = (a, b) => a.rank - b.rank;
 
-export const sortByMatchDecrease = (a, b) => {
-  console.log('sortByMatchDecrease');
-  return b._score - a._score;
-};
+export const sortByMatchDecrease = (a, b) => b._score - a._score;
 
-export const sortByMatchIncrease = (a, b) => {
-  console.log('sortByMatchIncrease');
-  return a._score - b._score;
-};
+export const sortByMatchIncrease = (a, b) => a._score - b._score;
 
-const sortByTimeStampIncrease = (a, b) => {
-  console.log('sortByTimeStampIncrease');
-  return (
-    Date.parse(concatTimeStamp(a.published_date)) - Date.parse(concatTimeStamp(b.published_date))
-  );
-};
+const sortByTimeStampIncrease = (a, b) =>
+  Date.parse(concatTimeStamp(a.published_date)) - Date.parse(concatTimeStamp(b.published_date));
 
 // eslint-disable-next-line consistent-return
 export const getSortFunction = sortType => {

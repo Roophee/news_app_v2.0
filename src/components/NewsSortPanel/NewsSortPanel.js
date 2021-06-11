@@ -19,8 +19,9 @@ export const NewsSortPanel = props => {
 
   const applySetSortType = (type, value) => {
     // setSortType(prev => ({ key: sortType, value }))
-    // eslint-disable-next-line no-unused-vars
+    console.log(newsStorage);
     newsStorage.sort(getSortFunction({ key: type, value }));
+    console.log(newsStorage);
     setNewsInStorage(newsStorage);
     setSortWasChanged(prev => !prev);
   };
