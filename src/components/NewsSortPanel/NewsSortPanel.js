@@ -3,7 +3,10 @@ import { StyledNewsSortPanel } from './styles';
 import OptionsGroup from '../../hoc/OptionsGroup';
 import { getSortFunction, normalizeNews } from '../../data/dataHandlers';
 import { QueryParamsContext } from '../../hoc/QueryStateProvider';
-import { NewsItem } from '../NewsItem';
+
+export default function Moon() {
+  return 'Moon';
+}
 
 export const NewsSortPanel = props => {
   const keys = ['date', 'rate', 'match'];

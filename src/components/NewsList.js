@@ -18,6 +18,7 @@ export default function NewsList() {
 
   return (
     <StyledNewsList directionColumn alignItems="flex-start" justifyContent="flex-start">
+      <NewsSortPanel />
       {normalizeNews(newsStorage).map(item => (
         <NewsItem item={item} key={item._id} />
       ))}
