@@ -40,6 +40,43 @@ const filterNewsByRealTimeStamp = article =>
 export const normalizeNews = news =>
   news.sort(sortNewsByTimeStamp).filter(filterNewsByRealTimeStamp);
 
+export const sortByRateDecrease = (a, b) => b.rank - a.rank;
+
+export const sortByRateIncrease = (a, b) => {
+  console.log(a, b);
+  return a.rank - b.rank;
+};
+
+export const sortByMatchDecrease = (a, b) => b._score - a._score;
+
+export const sortByMatchIncrease = (a, b) => a._score - b._score;
+
+const sortByTimeStampIncrease = (a, b) =>
+  Date.parse(concatTimeStamp(a.published_date)) - Date.parse(concatTimeStamp(b.published_date));
+
+// eslint-disable-next-line consistent-return
+export const getSortFunction = sortType => {
+  const { key, value } = sortType;
+  // eslint-disable-next-line default-case
+  switch (key) {
+    case 'date':
+      if (value === 'decrease') {
+        return sortNewsByTimeStamp;
+      }
+      return sortByTimeStampIncrease;
+    case 'rate':
+      if (value === 'decrease') {
+        return sortByRateDecrease;
+      }
+      return sortByRateIncrease;
+    case 'match':
+      if (value === 'decrease') {
+        return sortByMatchDecrease;
+      }
+      return sortByMatchIncrease;
+  }
+};
+
 // export const getQueryParam = name => {
 //   if (getItemFromLocalStore(name) !== '*' && getItemFromLocalStore(name) !== '0') {
 //     return `${getItemFromLocalStore(name)}`;

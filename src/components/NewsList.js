@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import NewsItem from './NewsItem';
 import Flex from './blank_elements/FlexContainer';
-import { normalizeNews } from '../data/dataHandlers';
+import { getSortFunction, normalizeNews } from '../data/dataHandlers';
 import { QueryParamsContext } from '../hoc/QueryStateProvider';
 import WelcomeScreen from './WelcomeScreen';
+import { NewsSortPanel } from './NewsSortPanel/NewsSortPanel';
 
 const StyledNewsList = styled(Flex)`
   width: 90%;
@@ -12,18 +13,21 @@ const StyledNewsList = styled(Flex)`
 `;
 
 export default function NewsList() {
-  const { newsStorage } = React.useContext(QueryParamsContext);
+  const { setNewsInStorage, newsStorage } = useContext(QueryParamsContext);
+
+  const applySetSortType = (type, value) => {
+    newsStorage.sort(getSortFunction({ key: type, value }));
+    setNewsInStorage(newsStorage);
+  };
+
   const startPage = <h3>Select filters and search for news</h3>;
 
   return (
     <StyledNewsList directionColumn alignItems="flex-start" justifyContent="flex-start">
-      {newsStorage.length === 0 ? (
-        <WelcomeScreen />
-      ) : normalizeNews(newsStorage).length > 0 ? (
-        normalizeNews(newsStorage).map(item => <NewsItem item={item} key={item._id} />)
-      ) : (
-        startPage
-      )}
+      <NewsSortPanel onclickHandler={applySetSortType} />
+      {normalizeNews(newsStorage).map(item => (
+        <NewsItem item={item} key={item._id} />
+      ))}
     </StyledNewsList>
   );
 }
