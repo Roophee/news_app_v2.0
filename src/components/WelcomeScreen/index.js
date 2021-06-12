@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Flex from './Common/FlexContainer';
-import Link from './Common/Link';
+import Flex from '../Common/FlexContainer';
+import Link from '../Common/Link';
 
 const StyledWelcomeScreen = styled(Flex)`
   width: 100%;

@@ -1,25 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import Flex from './Common/FlexContainer';
-import Button from './Common/Button';
-import OptionsGroup from '../hoc/OptionsGroup';
-import { QueryParamsContext } from '../hoc/QueryStateProvider';
+import Flex from '../Common/FlexContainer';
+import OptionsGroup from '../../hoc/OptionsGroup';
+import { QueryParamsContext } from '../../hoc/QueryStateProvider';
+import { AdvancedSearchButton, StyledFlex } from './style';
 
-const StyledFlex = styled(Flex)`
-  font-size: 0.65rem;
-  align-self: flex-end;
-
-  label,
-  select,
-  button {
-    font-family: inherit;
-  }
-`;
-
-const AdvancedSearchButton = styled(Button)`
-  align-self: flex-end;
-  padding: 0;
-`;
 export default function BasicSearchPanel(props) {
   const { queryState, dispatch } = React.useContext(QueryParamsContext);
   const { lang } = queryState;

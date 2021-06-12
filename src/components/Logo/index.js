@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from './Common/Link';
+import Link from '../Common/Link';
 
 const LocalLink = styled(Link)`
   font-size: 2rem;

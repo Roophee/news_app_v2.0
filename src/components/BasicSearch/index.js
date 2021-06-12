@@ -1,36 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import Link from './Common/Link';
-import Button from './Common/Button';
-import Flex from './Common/FlexContainer';
-import { QueryParamsContext } from '../hoc/QueryStateProvider';
+import Link from '../Common/Link';
+import { QueryParamsContext } from '../../hoc/QueryStateProvider';
+import { BasicSearchWrapper } from './style';
 
 const hoverColor = '#c62828';
-const BasicSearchWrapper = styled(Flex)`
-  width: 70%;
-  margin: 0 auto 10px;
-  ul,
-  li {
-    display: inline-block;
-  }
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    font-weight: 500;
-  }
-  li {
-    margin-right: 10px;
-  }
-`;
 
-const AdvancedSearchButton = styled(Button)`
-  align-self: self-end;
-`;
-
-export default function BasicSearch(props) {
+export default function BasicSearch() {
   const { queryState, dispatch, setSubmitWasClicked } = React.useContext(QueryParamsContext);
   const { lang } = queryState;
   const onClickHandler = (event, paramValue) => {
@@ -46,7 +21,7 @@ export default function BasicSearch(props) {
       dispatch({ type: 'SET_TOPIC', payload: paramValue });
     }
 
-    setSubmitWasClicked(prevState => true);
+    setSubmitWasClicked(true);
   };
 
   return (

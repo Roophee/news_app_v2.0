@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import BasicSearch from './BasicSearch';
-import BasicSearchPanel from './BasicSearchPanel';
-import AdvancedSearch from './AdvancedSearch';
+import BasicSearch from '../BasicSearch';
+import BasicSearchPanel from '../BasicSearchPanel';
+import AdvancedSearch from '../AdvancedSearch';
 
 const StyledForm = styled.form`
   display: flex;

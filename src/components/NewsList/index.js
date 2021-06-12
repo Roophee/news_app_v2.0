@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
-import NewsItem from './NewsItem';
-import Flex from './Common/FlexContainer';
-import { getSortFunction, normalizeNews } from '../data/dataHandlers';
-import { QueryParamsContext } from '../hoc/QueryStateProvider';
-import WelcomeScreen from './WelcomeScreen';
-import { NewsSortPanel } from './NewsSortPanel/NewsSortPanel';
+import NewsItem from '../NewsItem';
+import Flex from '../Common/FlexContainer';
+import { getSortFunction, normalizeNews } from '../../data/dataHandlers';
+import { QueryParamsContext } from '../../hoc/QueryStateProvider';
+import WelcomeScreen from '../WelcomeScreen';
+import { NewsSortPanel } from '../NewsSortPanel';
 
 const StyledNewsList = styled(Flex)`
   width: 90%;
