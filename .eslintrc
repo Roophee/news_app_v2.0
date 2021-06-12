@@ -11,11 +11,7 @@
   ],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "prettier/prettier": [
-      "error", {
-        "semi": true
-      }
-    ],
+    "prettier/prettier": "warn",
     "no-return-assign": "warn",
     "no-unused-vars": "warn",
     "camelcase": "warn",
@@ -29,5 +25,7 @@
     "react/destructuring-assignment": "warn",
     "react/jsx-props-no-spreading": "warn",
     "react/no-array-index-key": "warn",
+    "import/prefer-default-export": "off",
+    "react/button-has-type": "off"
   }
 }
