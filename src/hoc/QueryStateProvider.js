@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useState, useReducer, useContext } from 'react';
 import { keywordSetterHandler } from '../data/dataHandlers';
 import { createQueryToApi, fetchingNews, initialQueryPropertyState } from '../data/APIHandlers';
 
@@ -43,10 +43,19 @@ const reducer = (state, { type, payload }) => {
   }
 };
 
-export const QueryParamsContext = React.createContext();
+export const QueryParamsContext = React.createContext({
+  setResetWasClicked: () => {},
+  setSubmitWasClicked: () => {},
+  setNewsInStorage: () => {},
+  dispatch: () => {},
+  queryState: null,
+  newsStorage: null,
+});
+
+export const useNewsState = () => useContext(QueryParamsContext);
 
 export default function QueryStateProvider(props) {
-  const [newsStorage, setNewsInStorage] = useState([]);
+  const [newsStorage, setNewsInStorage] = useState(null);
   const [resetWasClicked, setResetWasClicked] = useState(false);
   const [submitWasClicked, setSubmitWasClicked] = useState(false);
   const [queryState, dispatch] = useReducer(reducer, initialQueryPropertyState);
