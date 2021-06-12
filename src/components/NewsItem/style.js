@@ -44,6 +44,9 @@ export const StyledNewsItemWrapper = styled(Flex)`
       font-weight: 600;
       color: grey;
     }
+    &__bookmark {
+      align-self: flex-end;
+    }
   }
 `;
 

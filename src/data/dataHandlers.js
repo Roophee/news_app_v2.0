@@ -134,6 +134,6 @@ export const authorHandler = author =>
     : author;
 
 export const newsSourceHandler = (author, source) => {
-  if (authorHandler(author)) return checkNullOrContent(source) ? ` ( ${source} )` : '';
+  if (authorHandler(author)) return checkNullOrContent(source) ? ` (${source})` : '';
   return checkNullOrContent(source) ? source : '';
 };

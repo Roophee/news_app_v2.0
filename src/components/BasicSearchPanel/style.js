@@ -11,6 +11,11 @@ export const StyledFlex = styled(Flex)`
   button {
     font-family: inherit;
   }
+  button {
+    margin: 0 5px;
+    padding: 0 2px;
+    border-radius: 3px;
+  }
 `;
 
 export const AdvancedSearchButton = styled(Button)`

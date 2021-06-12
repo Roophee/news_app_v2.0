@@ -21,7 +21,7 @@ export const AdvancedSearchWrapper = styled.div`
     padding: 5px;
   }
   input[id='from'] {
-    padding: 0;
+    padding: 2px;
   }
 `;
 
@@ -39,6 +39,7 @@ export const SearchButton = styled(Button)`
   border-radius: 3px;
   width: 5vw;
   min-width: 65px;
+  margin-right: 5px;
 `;
 
 export const ResetButton = styled(SearchButton)`
