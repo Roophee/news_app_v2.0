@@ -11,7 +11,7 @@ const LocalLink = styled(Link)`
 
 export default function Logo() {
   return (
-    <LocalLink href="#">
+    <LocalLink href="https://roophee.github.io/news_app_v2.0/">
       <span>The News App</span>
     </LocalLink>
   );
