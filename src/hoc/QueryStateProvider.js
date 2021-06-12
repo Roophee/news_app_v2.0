@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useReducer } from 'react';
 import { keywordSetterHandler } from '../data/dataHandlers';
 import { createQueryToApi, fetchingNews, initialQueryPropertyState } from '../data/APIHandlers';
 
@@ -46,14 +46,14 @@ const reducer = (state, { type, payload }) => {
 export const QueryParamsContext = React.createContext();
 
 export default function QueryStateProvider(props) {
-  const [newsStorage, setNewsInStorage] = React.useState([]);
-  const [resetWasClicked, setResetWasClicked] = React.useState(false);
-  const [submitWasClicked, setSubmitWasClicked] = React.useState(false);
-  const [queryState, dispatch] = React.useReducer(reducer, initialQueryPropertyState);
+  const [newsStorage, setNewsInStorage] = useState([]);
+  const [resetWasClicked, setResetWasClicked] = useState(false);
+  const [submitWasClicked, setSubmitWasClicked] = useState(false);
+  const [queryState, dispatch] = useReducer(reducer, initialQueryPropertyState);
 
   window.wwwq = newsStorage;
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (submitWasClicked) {
       fetchingNews(createQueryToApi(queryState)).then(news => {
         setNewsInStorage([...news]);
@@ -62,7 +62,7 @@ export default function QueryStateProvider(props) {
     }
   }, [submitWasClicked]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (resetWasClicked) {
       setNewsInStorage([]);
       dispatch({ type: 'RESET' });

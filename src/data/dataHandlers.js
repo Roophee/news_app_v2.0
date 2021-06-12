@@ -42,7 +42,10 @@ export const normalizeNews = news =>
 
 export const sortByRateDecrease = (a, b) => b.rank - a.rank;
 
-export const sortByRateIncrease = (a, b) => a.rank - b.rank;
+export const sortByRateIncrease = (a, b) => {
+  console.log(a, b);
+  return a.rank - b.rank;
+};
 
 export const sortByMatchDecrease = (a, b) => b._score - a._score;
 
@@ -55,7 +58,7 @@ const sortByTimeStampIncrease = (a, b) =>
 export const getSortFunction = sortType => {
   const { key, value } = sortType;
   // eslint-disable-next-line default-case
-  switch (sortType.key) {
+  switch (key) {
     case 'date':
       if (value === 'decrease') {
         return sortNewsByTimeStamp;
