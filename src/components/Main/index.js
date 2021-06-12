@@ -5,10 +5,9 @@ import NewsList from '../NewsList';
 
 const StyledMain = styled.main`
   width: 90%;
-  margin: auto;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 `;
 
 export default function Main() {

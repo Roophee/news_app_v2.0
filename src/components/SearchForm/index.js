@@ -14,6 +14,7 @@ const StyledForm = styled.form`
 export default function SearchForm(props) {
   const [panelIsOpen, setPanelIsOpen] = React.useState(false);
   const panelRef = React.useRef();
+
   function refHandler() {
     console.log(panelRef);
     if (panelRef) console.log(panelRef.current);
