@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Flex from './blank_elements/FlexContainer';
-import Button from './blank_elements/Button';
+import Flex from './Common/FlexContainer';
+import Button from './Common/Button';
 import OptionsGroup from '../hoc/OptionsGroup';
 import { QueryParamsContext } from '../hoc/QueryStateProvider';
 

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { localStorageGetItem, localStorageSetItem } from '../../utils/localStorage';
 import { LOGIN_STATUS } from '../../constants/globals';
-import Link from '../blank_elements/Link';
+import Link from '../Common/Link';
 import LoginModal from '../LoginModal';
 
 const hoverColor = '#c62828';

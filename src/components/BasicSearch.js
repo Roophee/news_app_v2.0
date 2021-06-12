@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from './blank_elements/Link';
-import Button from './blank_elements/Button';
-import Flex from './blank_elements/FlexContainer';
+import Link from './Common/Link';
+import Button from './Common/Button';
+import Flex from './Common/FlexContainer';
 import { QueryParamsContext } from '../hoc/QueryStateProvider';
 
 const hoverColor = '#c62828';

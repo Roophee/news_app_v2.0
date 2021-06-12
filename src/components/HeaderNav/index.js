@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '../blank_elements/Link';
+import Link from '../Common/Link';
 import { StyledHeaderNav } from './style';
 import UserDataItem from '../UserDataItem';
 

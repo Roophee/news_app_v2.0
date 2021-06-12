@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import NewsItem from './NewsItem';
-import Flex from './blank_elements/FlexContainer';
+import Flex from './Common/FlexContainer';
 import { getSortFunction, normalizeNews } from '../data/dataHandlers';
 import { QueryParamsContext } from '../hoc/QueryStateProvider';
 import WelcomeScreen from './WelcomeScreen';

@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import QueryStateProvider from './hoc/QueryStateProvider';
-import { GlobalStyle } from './components/common/GlobalStyles';
+import { GlobalStyle } from './components/Common/GlobalStyles';
 import { localStorageGetItem, localStorageSetItem } from './utils/localStorage';
 import { LOGIN_STATUS } from './constants/globals';
 

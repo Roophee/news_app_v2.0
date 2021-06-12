@@ -2,7 +2,7 @@ import React, { useCallback, useRef } from 'react';
 import Popup from 'reactjs-popup';
 import styled from 'styled-components';
 import { LoginField } from './style';
-import StyledButton from '../blank_elements/Button';
+import StyledButton from '../Common/Button';
 import { localStorageGetItem, localStorageSetItem } from '../../utils/localStorage';
 import { DEFAULT_EMAIL, DEFAULT_PASS, LOGIN_STATUS } from '../../constants/globals';
 

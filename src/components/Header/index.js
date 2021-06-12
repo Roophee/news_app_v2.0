@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../Logo';
-import Flex from '../blank_elements/FlexContainer';
+import Flex from '../Common/FlexContainer';
 import { StyledHeader } from './style';
 import HeaderNav from '../HeaderNav';
 
