@@ -23,7 +23,7 @@ const hoverColor = '#c62828';
 
 export default function Logo() {
   return (
-    <LocalLink hoverColor={hoverColor} href="https://roophee.github.io/news_app_v2.0/">
+    <LocalLink hoverColor={hoverColor} href="https://github.com/Roophee/news_app_v2.0">
       <span>The News App</span>
     </LocalLink>
   );
