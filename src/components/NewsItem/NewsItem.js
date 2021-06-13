@@ -61,7 +61,7 @@ export default function NewsItem({ item }) {
             {checkNullOrContent(item.summary).length > 300
               ? checkNullOrContent(item.summary).slice(0, 300)
               : checkNullOrContent(item.summary)}
-            {'...'}
+            {checkNullOrContent(item.summary) ? '...' : ''}
           </div>
         </div>
       </div>
