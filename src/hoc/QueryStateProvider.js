@@ -78,7 +78,7 @@ export default function QueryStateProvider(props) {
 
   useEffect(() => {
     if (resetWasClicked) {
-      setNewsInStorage([]);
+      setNewsInStorage(null);
       dispatch({ type: 'RESET' });
       setResetWasClicked(false);
     }
