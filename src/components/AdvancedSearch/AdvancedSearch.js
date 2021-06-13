@@ -5,7 +5,7 @@ import { keywordGetterHandler } from '../../data/dataHandlers';
 import { QueryParamsContext } from '../../hoc/QueryStateProvider';
 import { AdvancedSearchWrapper, ResetButton, SearchButton, StyledFlex } from './style';
 
-const AdvancedSearch = forwardRef((props, ref) => {
+export const AdvancedSearch = forwardRef((props, ref) => {
   const { queryState, dispatch, setResetWasClicked, setSubmitWasClicked } =
     useContext(QueryParamsContext);
   const { q, topic, lang, country, from, page_size } = queryState;
@@ -98,4 +98,3 @@ const AdvancedSearch = forwardRef((props, ref) => {
   );
 });
 
-export default AdvancedSearch;
