@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useReducer, useContext } from 'react';
-import { keywordSetterHandler } from '../data/dataHandlers';
+import { keywordSetterHandler, normalizeNews } from '../data/dataHandlers';
 import { createQueryToApi, fetchingNews, initialQueryPropertyState } from '../data/APIHandlers';
 
 const reducer = (state, { type, payload }) => {
@@ -47,7 +47,11 @@ export const QueryParamsContext = React.createContext({
   setResetWasClicked: () => {},
   setSubmitWasClicked: () => {},
   setNewsInStorage: () => {},
+  setContactsPage: () => {},
+  setAboutPage: () => {},
   dispatch: () => {},
+  contactsPage: null,
+  aboutPage: null,
   queryState: null,
   newsStorage: null,
 });
@@ -58,14 +62,15 @@ export default function QueryStateProvider(props) {
   const [newsStorage, setNewsInStorage] = useState(null);
   const [resetWasClicked, setResetWasClicked] = useState(false);
   const [submitWasClicked, setSubmitWasClicked] = useState(false);
+  const [aboutPage, setAboutPage] = useState(false);
+  const [contactsPage, setContactsPage] = useState(false);
   const [queryState, dispatch] = useReducer(reducer, initialQueryPropertyState);
-
-  window.wwwq = newsStorage;
 
   useEffect(() => {
     if (submitWasClicked) {
+      setNewsInStorage(null);
       fetchingNews(createQueryToApi(queryState)).then(news => {
-        setNewsInStorage([...news]);
+        setNewsInStorage([...normalizeNews(news)]);
         setSubmitWasClicked(false);
       });
     }
@@ -79,10 +84,21 @@ export default function QueryStateProvider(props) {
     }
   }, [resetWasClicked]);
 
+  useEffect(() => {
+    if (aboutPage) {
+      setAboutPage(false);
+    }
+  }, [submitWasClicked]);
+
   const formState = {
     setResetWasClicked,
     setSubmitWasClicked,
     setNewsInStorage,
+    setAboutPage,
+    setContactsPage,
+    submitWasClicked,
+    contactsPage,
+    aboutPage,
     newsStorage,
     queryState,
     dispatch,

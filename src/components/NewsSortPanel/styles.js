@@ -10,4 +10,11 @@ export const StyledNewsSortPanel = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  
+  label{
+    font-size: .65rem;
+  }
+  select {
+    font-family: inherit;
+  }
 `;

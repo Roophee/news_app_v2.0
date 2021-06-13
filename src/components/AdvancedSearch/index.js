@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext, forwardRef } from 'react';
 import Flex from '../Common/FlexContainer';
 import OptionsGroup from '../../hoc/OptionsGroup';
 import { keywordGetterHandler } from '../../data/dataHandlers';
 import { QueryParamsContext } from '../../hoc/QueryStateProvider';
 import { AdvancedSearchWrapper, ResetButton, SearchButton, StyledFlex } from './style';
 
-const AdvancedSearch = React.forwardRef((props, ref) => {
+const AdvancedSearch = forwardRef((props, ref) => {
   const { queryState, dispatch, setResetWasClicked, setSubmitWasClicked } =
-    React.useContext(QueryParamsContext);
+    useContext(QueryParamsContext);
   const { q, topic, lang, country, from, page_size } = queryState;
 
   return (

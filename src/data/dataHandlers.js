@@ -42,10 +42,7 @@ export const normalizeNews = news =>
 
 export const sortByRateDecrease = (a, b) => b.rank - a.rank;
 
-export const sortByRateIncrease = (a, b) => {
-  console.log(a, b);
-  return a.rank - b.rank;
-};
+export const sortByRateIncrease = (a, b) => a.rank - b.rank;
 
 export const sortByMatchDecrease = (a, b) => b._score - a._score;
 
@@ -76,13 +73,6 @@ export const getSortFunction = sortType => {
       return sortByMatchIncrease;
   }
 };
-
-// export const getQueryParam = name => {
-//   if (getItemFromLocalStore(name) !== '*' && getItemFromLocalStore(name) !== '0') {
-//     return `${getItemFromLocalStore(name)}`;
-//   }
-//   return '';
-// };
 
 const returnPlaceHolderUrl = (msg = 'No Image') =>
   `https://via.placeholder.com/450x250.png/F5F5F5/d32f2f?text=${msg}`;

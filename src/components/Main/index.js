@@ -8,6 +8,7 @@ const StyledMain = styled.main`
   min-height: 700px;
   display: flex;
   flex-direction: column;
+  overflow: visible;
 `;
 
 export default function Main() {

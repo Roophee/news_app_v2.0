@@ -16,8 +16,6 @@ export default function SearchForm(props) {
   const panelRef = React.useRef();
 
   function refHandler() {
-    console.log(panelRef);
-    if (panelRef) console.log(panelRef.current);
     if (!panelRef.current.style.display || panelRef.current.style.display === 'none') {
       panelRef.current.style.display = 'flex';
       return;

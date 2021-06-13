@@ -1,39 +1,35 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
+import React, { useContext, useEffect } from 'react';
+import { StyledNewsList } from './style';
 import NewsItem from '../NewsItem';
-import { getSortFunction, normalizeNews } from '../../data/dataHandlers';
-import { QueryParamsContext, useNewsState } from '../../hoc/QueryStateProvider';
+import WelcomeScreen from '../WelcomeScreen';
 import { NewsSortPanel } from '../NewsSortPanel';
 import { isUserLoggedIn } from '../../utils/user';
+import { Preloader } from '../Preloader';
 import { localStorageGetItem } from '../../utils/localStorage';
-
-const StyledNewsList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: 10px auto 0;
-
-  h3 {
-    margin: 150px auto;
-  }
-`;
+import { getSortFunction } from '../../data/dataHandlers';
+import { QueryParamsContext, useNewsState } from '../../hoc/QueryStateProvider';
 
 export default function NewsList() {
+  const { aboutPage, contactsPage, setContactsPage, submitWasClicked } =
+    useContext(QueryParamsContext);
   const { setNewsInStorage, newsStorage } = useNewsState();
   const isLoggedInUser = isUserLoggedIn();
   const savedArticles = localStorageGetItem('saved_articles');
 
   const applySetSortType = (type, value) => {
-    newsStorage.sort(getSortFunction({ key: type, value }));
-    setNewsInStorage([...newsStorage]);
+    const sortedNewsStorage = [...newsStorage.sort(getSortFunction({ key: type, value }))];
+    setNewsInStorage(sortedNewsStorage);
   };
 
   return (
     <StyledNewsList>
-      {!newsStorage && <h3>Select filters and search for news</h3>}
-      {newsStorage && <NewsSortPanel onclickHandler={applySetSortType} />}
-      {newsStorage &&
-        normalizeNews(newsStorage).map(item => <NewsItem item={item} key={item._id} />)}
+      {aboutPage && <WelcomeScreen />}
+      {submitWasClicked && <Preloader />}
+      {!aboutPage && !submitWasClicked && !newsStorage && <h3>Select filters and search for news</h3>}
+      {!aboutPage && newsStorage && <NewsSortPanel onclickHandler={applySetSortType} />}
+      {!aboutPage &&
+        newsStorage &&
+        newsStorage.map(item => <NewsItem item={item} key={item._id} />)}
     </StyledNewsList>
   );
 }

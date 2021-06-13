@@ -18,9 +18,6 @@ export default function NewsItem({ item }) {
   const saveArticle = useCallback(() => {
     localStorageSetItem('saved_articles', item);
   }, []);
-  console.log(String(checkNullOrContent(item.summary)).length > 50
-      ? String(checkNullOrContent(item.summary)).slice(0, 100)
-      : checkNullOrContent(item.summary))
 
   return (
     <StyledNewsItemWrapper className="news__item" justifyContent="start" alignItems="flex-start">

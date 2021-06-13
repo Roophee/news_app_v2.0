@@ -58,7 +58,7 @@ export default function OptionsGroup(props) {
     sortByMatch: {
       default: 'None',
       decrease: 'Fitst best match',
-      increase: 'Fitst best match',
+      increase: 'Fitst worst match',
     },
   };
   const { optionsType } = props;

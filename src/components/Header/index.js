@@ -4,7 +4,7 @@ import Flex from '../Common/FlexContainer';
 import { StyledHeader } from './style';
 import HeaderNav from '../HeaderNav';
 
-export default function Header() {
+export default function Header(props) {
   return (
     <StyledHeader>
       <div />
