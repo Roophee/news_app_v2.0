@@ -21,7 +21,6 @@ export default function BasicSearch() {
       dispatch({ type: 'SET_LANGUAGE', payload: saveLangBeforeReset });
       dispatch({ type: 'SET_TOPIC', payload: paramValue });
     }
-
     setSubmitWasClicked(true);
   };
 

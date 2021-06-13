@@ -5,10 +5,11 @@ import NewsList from '../NewsList';
 
 const StyledMain = styled.main`
   width: 90%;
-  min-height: 700px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   overflow: visible;
+  margin-top: 60px;
 `;
 
 export default function Main() {
