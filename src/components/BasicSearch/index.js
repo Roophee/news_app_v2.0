@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from '../Common/Link';
-import { QueryParamsContext } from '../../hoc/QueryStateProvider';
+import { useNewsState } from '../../hoc/QueryStateProvider';
 import { BasicSearchWrapper } from './style';
 
 const hoverColor = '#c62828';
 
 export default function BasicSearch() {
-  const { queryState, dispatch, setSubmitWasClicked } = React.useContext(QueryParamsContext);
+  const { queryState, dispatch, setSubmitWasClicked } = useNewsState();
   const { lang } = queryState;
+
   const onClickHandler = (event, paramValue) => {
     event.preventDefault();
     if (lang === 'default') {

@@ -3,6 +3,7 @@ import { localStorageGetItem, localStorageSetItem } from '../../utils/localStora
 import { LOGIN_STATUS } from '../../constants/globals';
 import Link from '../Common/Link';
 import LoginModal from '../LoginModal';
+import { useNewsState } from '../../hoc/QueryStateProvider';
 
 const hoverColor = '#c62828';
 
@@ -11,6 +12,8 @@ export default function UserDataItem() {
     localStorageGetItem('login_status') === LOGIN_STATUS.IN
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { setNewsInStorage, newsStorage } = useNewsState();
 
   const handleOnclickLogin = useCallback(() => setIsModalOpen(prev => !prev), []);
 
