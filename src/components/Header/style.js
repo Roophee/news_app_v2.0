@@ -10,6 +10,18 @@ export const StyledHeader = styled.header`
 
   div,
   nav {
-    width: 33%;
+    width: 50%;
+
+    @media (min-width: 800px) {
+      width: 33%;
+    }
+  }
+
+  div:first-child {
+    display: none;
+
+    @media (min-width: 800px) {
+      width: 33%;
+    }
   }
 `;

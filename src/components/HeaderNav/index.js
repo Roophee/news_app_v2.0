@@ -1,14 +1,13 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Link from '../Common/Link';
 import { StyledHeaderNav } from './style';
 import UserDataItem from '../UserDataItem';
-import {QueryParamsContext} from "../../hoc/QueryStateProvider";
+import { useNewsState } from '../../hoc/QueryStateProvider';
 
 const hoverColor = '#c62828';
 
-
-export default function HeaderNav(props) {
-  const {setAboutPage, setContactsPage, setNewsInStorage} = useContext(QueryParamsContext);
+export default function HeaderNav() {
+  const { setAboutPage, setContactsPage, setNewsInStorage } = useNewsState();
   return (
     <StyledHeaderNav>
       <ul>
@@ -18,7 +17,7 @@ export default function HeaderNav(props) {
             hoverColor={hoverColor}
             onClick={e => {
               e.preventDefault();
-                setNewsInStorage(null)
+              setNewsInStorage(null);
               setAboutPage(true);
             }}>
             About
