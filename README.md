@@ -1,6 +1,6 @@
-# News App
+# The News App
 
-[News App](https://roophee.github.io/news_app_v2.0/)
+[The News App](https://roophee.github.io/news_app_v2.0/)
 
 The app will collect news from open news sources. The main advantage of this application is the ability to read news from different agencies and from different countries in one place. This will allow you to see how the same events are covered in different countries. For collecting, sorting and filtering news will be used [Newscatcher](https://newscatcherapi.com/).
 
