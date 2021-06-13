@@ -22,6 +22,7 @@ export const StyledHeader = styled.header`
 
     @media (min-width: 800px) {
       width: 33%;
+      display: flex;
     }
   }
 `;
