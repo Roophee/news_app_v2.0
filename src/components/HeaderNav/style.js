@@ -13,7 +13,7 @@ export const StyledHeaderNav = styled.nav`
 
     li {
       font-weight: 600;
-      margin-left: 5px;
+      margin-left: 8px;
     }
   }
 

@@ -9,7 +9,7 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   overflow: visible;
-  margin-top: 60px;
+  margin-top: 105px;
 `;
 
 export default function Main() {

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+
 
 export const StyledHeader = styled.header`
   position: fixed;
@@ -7,10 +8,13 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   border-bottom: 2px solid #000;
   margin-bottom: 7px;
+  padding-top:${props => `${props.padding}px`};
+  padding-bottom:${props => `${props.padding}px`};
   background: #EEE;
+  transition: padding .1s linear;
 
   div,
   nav {

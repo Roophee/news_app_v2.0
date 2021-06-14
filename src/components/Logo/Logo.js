@@ -7,15 +7,9 @@ const LocalLink = styled(Link)`
   font-family: 'Ubuntu Mono', monospace;
   font-weight: 700;
   color: #c62828;
-  &:hover {
-    font-size: 1.7rem;
-  }
 
   @media (min-width: 800px) {
     font-size: 2rem;
-    &:hover {
-      font-size: 2.1rem;
-    }
   }
 `;
 

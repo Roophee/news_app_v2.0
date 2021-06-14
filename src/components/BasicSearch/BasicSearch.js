@@ -25,7 +25,7 @@ export default function BasicSearch() {
   };
 
   return (
-    <BasicSearchWrapper justifyContent="space-between" direction="column">
+    <BasicSearchWrapper className="basicSearch" justifyContent="space-between" direction="column">
       <ul>
         <li>
           <Link href="#" hoverColor={hoverColor} onClick={event => onClickHandler(event, 'news')}>
