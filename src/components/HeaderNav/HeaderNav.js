@@ -23,17 +23,7 @@ export default function HeaderNav() {
             About
           </Link>
         </li>
-        <li>
-          <Link
-            href="#"
-            hoverColor={hoverColor}
-            onClick={e => {
-              e.preventDefault();
-              setContactsPage(true);
-            }}>
-            Contacts
-          </Link>
-        </li>
+
         <li>
           <UserDataItem />
         </li>

@@ -42,8 +42,8 @@ export default function OptionsGroup(props) {
       it: 'Italy',
       lt: 'Lithuania',
       pt: 'Portugal',
-      sp: 'Spain',
-      ch: 'China',
+      es: 'Spain',
+      cn: 'China',
     },
     sortByDateOptions: {
       default: 'None',

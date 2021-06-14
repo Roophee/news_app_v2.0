@@ -1,16 +1,19 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   authorHandler,
   checkNullOrContent,
   getDateLabel,
   getUrlForNewsImage,
   newsSourceHandler,
+  returnPlaceHolderUrl,
 } from '../../data/dataHandlers';
 import Link from '../Common/Link';
 import Flex from '../Common/FlexContainer';
 import { StyledNewsDateAuthor, StyledNewsItemWrapper } from './style';
 import { localStorageSetItem } from '../../utils/localStorage';
 import { isUserLoggedIn } from '../../utils/user';
+import NewsImagePlaceholder from '../NewsImagePlacehoder';
+import NewsList from '../NewsList';
 
 export default function NewsItem({ item }) {
   const isLoggedInUser = isUserLoggedIn();
@@ -21,11 +24,7 @@ export default function NewsItem({ item }) {
 
   return (
     <StyledNewsItemWrapper className="news__item" justifyContent="start" alignItems="flex-start">
-      <img
-        className="news__picture"
-        src={getUrlForNewsImage(item.media, item.clean_url)}
-        alt="News_photo"
-      />
+      <NewsImagePlaceholder media={item.media} clean_url={item.clean_url}/>
       {isLoggedInUser && (
         <button className="news__bookmark" onClick={saveArticle}>
           <svg width="25" height="25" viewBox="0 0 25 25">

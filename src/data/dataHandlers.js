@@ -74,7 +74,7 @@ export const getSortFunction = sortType => {
   }
 };
 
-const returnPlaceHolderUrl = (msg = 'No Image') =>
+export const returnPlaceHolderUrl = (msg = 'No Image') =>
   `https://via.placeholder.com/450x250.png/F5F5F5/d32f2f?text=${msg}`;
 
 export const getUrlForNewsImage = (url, placeHolderText) => {
