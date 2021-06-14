@@ -15,7 +15,7 @@ const StyledPreloader = styled.div`
     animation: load7 1.8s infinite ease-in-out;
   }
   .loader {
-    color: #65abf8;
+    color: #007bff;;
     font-size: 10px;
     margin: 80px auto;
     position: relative;

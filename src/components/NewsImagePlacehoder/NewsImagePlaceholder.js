@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { getUrlForNewsImage, returnPlaceHolderUrl } from '../../data/dataHandlers';
+import { getUrlForNewsImage } from '../../data/dataHandlers';
 import LoadingImage from '../../images/LoadingImage.png';
 
 const StyledImagePlaceHolder = styled.img`

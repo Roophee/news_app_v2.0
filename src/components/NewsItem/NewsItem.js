@@ -3,9 +3,7 @@ import {
   authorHandler,
   checkNullOrContent,
   getDateLabel,
-  getUrlForNewsImage,
   newsSourceHandler,
-  returnPlaceHolderUrl,
 } from '../../data/dataHandlers';
 import Link from '../Common/Link';
 import Flex from '../Common/FlexContainer';
@@ -13,7 +11,6 @@ import { StyledNewsDateAuthor, StyledNewsItemWrapper } from './style';
 import { localStorageSetItem } from '../../utils/localStorage';
 import { isUserLoggedIn } from '../../utils/user';
 import NewsImagePlaceholder from '../NewsImagePlacehoder';
-import NewsList from '../NewsList';
 
 export default function NewsItem({ item }) {
   const isLoggedInUser = isUserLoggedIn();
